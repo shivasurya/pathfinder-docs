@@ -3,33 +3,60 @@ title: Home
 layout: home
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+## Code Pathfinder
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+Code Pathfinder attempts to be query language/flow analysis with structural search on source code. It's built for identifying vulnerabilities in source code. Currently, it only supports Java language.
 
-More specifically, the created site:
+### Features
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+- **Basic query support**: Write queries to search for patterns in source code.
+- **Call graph analysis**: Analyze method calls and data flow between methods.
+- **Source Sink analysis**: Identify sources and sinks of sensitive data and check for vulnerabilities like SQL injection, XSS etc.
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+### Installation
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+```bash
+$ git clone https://github.com/shivasurya/code-pathfinder
+$ cd sourcecode-parser
+$ go build -o pathfinder (or) go run .
+$ ./pathfinder /PATH/TO/SOURCE
+```
 
-To get started with creating a site, simply:
+### Usage
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+```bash
+$ ./pathfinder /PATH/TO/SOURCE
+2024/04/19 12:46:08 Graph built successfully
+Path-Finder Query Console: 
+> FIND method WHERE name = 'onCreate'
+FIND method WHERE name = 'onCreate'
+------Results------
+@Override
+public void onCreate(SQLiteDatabase db) {
+    db.execSQL(DATABASE_CREATE);
+}
+-------
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_movie_detail);
+    Intent intent = getIntent();
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-----
+    movieGeneralModal moviegeneralModal = (movieGeneralModal) intent.getSerializableExtra("DATA_MOVIE");
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+    if (savedInstanceState == null) {
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+        movieDetailFragment fragment = new movieDetailFragment();
+        fragment.setMovieData(moviegeneralModal);
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.movie_detail_container, fragment)
+                .commit();
+    }
+}
+------Results------
+```
+
+
