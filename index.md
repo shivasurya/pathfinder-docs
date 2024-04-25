@@ -9,7 +9,7 @@ Code Pathfinder attempts to be query language/flow analysis with structural sear
 
 ### Features
 
-- **Basic Query Support**: Write queries to search for patterns in source code.
+- **Basic query support**: Write queries to search for patterns in source code.
 - **Call graph analysis**: Analyze method calls and data flow between methods.
 - **Source Sink analysis**: Identify sources and sinks of sensitive data and check for vulnerabilities like SQL injection, XSS etc.
 
