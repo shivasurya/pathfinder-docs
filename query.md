@@ -11,11 +11,11 @@ Entities supported so far are,
 ### Supported Entities
 
 - `method_declaraion` : Represents a method declaration.
+- `class_declaration` : Represents a class declaration.
+- `method_invocation` : Represents a method invocation.
 
 ### Planned Entities
 
-- `method_invocation` : Represents a method invocation. (Not implemented yet)
-- `class_declaration` : Represents a class declaration. (Not implemented yet)
 - `variable_declaration` : Represents a variable declaration. (Not implemented yet)
 
 ### Supported Attributes
@@ -25,6 +25,8 @@ Entities supported so far are,
 - `visibility` : Represents the visibility of the entity (Access Modifiers).
 - `argumentype` : Represents the argument types of the entity.
 - `argumentname` : Represents the argument names of the entity.
+- `superclass` : Represents the superclass of the entity. (Applicable only for class_declaration)
+- `interface` : Represents the interfaces implemented by the entity. (Applicable only for class_declaration)
 
 ## Query Syntax
 
