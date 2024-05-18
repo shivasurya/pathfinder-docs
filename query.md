@@ -28,6 +28,10 @@ Entities supported so far are,
 - `variablevalue` : Represents the value of the variable. (Applicable only for variable_declaration)
 - `scope` : Represents the scope of the variable (example: local, field). (Applicable only for variable_declaration)
 
+### Supported Routines
+
+- `has_access` : Represents the routine to check if the entity is being accessed based on scope.
+
 ## Query Syntax
 
 The query syntax is simple and easy to use. The syntax is inspired by SQL and is designed to be simple and easy to use.
