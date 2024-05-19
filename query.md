@@ -1,6 +1,7 @@
 ---
-title: Query
+title: Basic Usage
 layout: home
+nav_order: 2
 ---
 
 ## Basic Query
