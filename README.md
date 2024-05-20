@@ -1,13 +1,13 @@
 <div align="center">
 
-# Code Pathfinder 
+# Code Pathfinder (coddpathfinder.dev)
 Code Pathfinder attempts to be alternative for CodeQL for structural search on source code. It's built for identifying vulnerabilities in source code. Currently, it only supports Java language.
 
 [![Build and Release](https://github.com/shivasurya/code-pathfinder/actions/workflows/build.yml/badge.svg)](https://github.com/shivasurya/code-pathfinder/actions/workflows/build.yml)
 </div>
 
 ## Getting Started
-Read the [documentation](./README.md), or run `pathfinder --help`.
+Read the [documentation](https://codepathfinder.dev/), or run `pathfinder --help`.
 
 ## Features
 
