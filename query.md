@@ -28,6 +28,7 @@ Entities supported so far are,
 - `variabledatatype` : Represents the data type of the variable. (Applicable only for variable_declaration)
 - `variablevalue` : Represents the value of the variable. (Applicable only for variable_declaration)
 - `scope` : Represents the scope of the variable (example: local, field). (Applicable only for variable_declaration)
+- `is_java_source` : Represents the entity is a Java source file.
 
 ### Supported Routines
 
