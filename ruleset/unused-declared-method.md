@@ -1,5 +1,5 @@
 ---
-title: Unused Declared Method Query
+title: Unused Method Query
 layout: default
 parent: Pathfinder Queries
 ---
