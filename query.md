@@ -15,6 +15,7 @@ Entities supported so far are,
 - `class_declaration` : Represents a class declaration.
 - `method_invocation` : Represents a method invocation.
 - `variable_declaration` : Represents a variable declaration.
+- `block_comment` : Represents a block comment.
 
 ### Supported Attributes
 
@@ -29,6 +30,15 @@ Entities supported so far are,
 - `variablevalue` : Represents the value of the variable. (Applicable only for variable_declaration)
 - `scope` : Represents the scope of the variable (example: local, field). (Applicable only for variable_declaration)
 - `is_java_source` : Represents the entity is a Java source file.
+
+#### Block Comments
+
+- `comment_author` : Represents the author of the block comment. (example: @author Shivasurya)
+- `comment_see`: Represents the see references of the block comment. (example: @see DetailsClass.java)
+- `comment_since`: Represents the since references of the block comment. (example: @since 01-01-2010)
+- `comment_version`: Represents the version references of the block comment. (example: @version 1.1)
+- `comment_param` : Represents the param references of the block comment. (example: @param arg1)
+- `comment_throws` : Represents the throws references of the block comment. (example: @throws Exception)
 
 ### Supported Routines
 
