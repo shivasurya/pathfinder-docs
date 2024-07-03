@@ -8,3 +8,5 @@ color_scheme: dark
 aux_links:
   "Github":
     - "https://github.com/shivasurya/code-pathfinder"
+plugins:
+  - jekyll-sitemap
