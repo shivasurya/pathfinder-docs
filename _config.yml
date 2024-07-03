@@ -4,3 +4,6 @@ theme: just-the-docs
 
 url: https://codepathfinder.dev/
 ga_tracking: G-TEBRJVVBGG
+aux_links:
+  "Github":
+    - "https://github.com/shivasurya/code-pathfinder"
