@@ -6,7 +6,7 @@ nav_order: 1
 
 ## Code Pathfinder
 
-Code Pathfinder attempts to be query language/flow analysis with structural search on source code. It's built for identifying vulnerabilities in source code. Currently, it only supports Java language.
+Introducing Code Pathfinder, the open-source alternative to CodeQL. Designed for precise flow analysis and advanced structural search, it identifies vulnerabilities in your code. Currently optimized for Java, Code Pathfinder offers robust query support to enhance your code's security and integrity.
 
 [Get started now](#installation){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View it on GitHub](https://github.com/shivasurya/code-pathfinder){: .btn .fs-5 .mb-4 .mb-md-0 }
